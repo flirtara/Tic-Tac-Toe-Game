@@ -1,4 +1,6 @@
 # Tic-Tac-Toe-Game
+[![Build Status](https://app.travis-ci.com/flirtara/Tic-Tac-Toe-Game.svg?branch=main)](https://app.travis-ci.com/flirtara/Tic-Tac-Toe-Game)
+
 Tic Tac Toe Game writen in Python.
 
 
