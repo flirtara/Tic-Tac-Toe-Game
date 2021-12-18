@@ -1,7 +1,12 @@
 from unittest import TestCase
-from unittest.mock import patch
+# try:
+#     from unittest.mock import patch
+# except ImportError:
+#     from mock import patch
 
 from player import Player
+
+VALID_MOVES = (1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 
 class PlayerTest(TestCase):
@@ -24,13 +29,9 @@ class PlayerTest(TestCase):
         player_computer = Player(False)
         self.assertEqual("O", player_computer.marker)
 
-    # def test_get_player_move(self):
-    #     # Test human valid move
-    #     player_human = Player(True)
-    #     human_move = player_human.get_move()
-    #     self.assertEqual(4, human_move.value)
-    #
-    #     # Test computer move
-    #     # player_computer = Player(False)
-    #     # computer_move = player_computer.get_move()
-    #     # self.assertEqual(9, computer_move.value)
+    def test_computer_get_move(self):
+        # Test Computer returns a move.
+        player_computer = Player(False)
+        move = player_computer.get_move()
+        self.assertIn(move.value, VALID_MOVES)
+
