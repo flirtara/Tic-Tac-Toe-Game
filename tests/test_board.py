@@ -152,5 +152,5 @@ class BoardTest(TestCase):
         my_board.game_board = [["X", "X", "O"],
                                ["O", "X", "X"],
                                ["X", "O", "O"]]
-        my_board.rest_board()
+        my_board.reset_board()
         self.assertEqual(my_board.game_board, EMPTY_GAME_BOARD)

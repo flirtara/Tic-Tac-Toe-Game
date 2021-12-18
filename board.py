@@ -97,7 +97,7 @@ class Board:
             empty_count += row.count(Board.EMPTY_CELL)
         return empty_count == 0
 
-    def rest_board(self):
+    def reset_board(self):
         self.game_board = [[0, 0, 0],
                            [0, 0, 0],
                            [0, 0, 0]]
