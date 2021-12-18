@@ -90,3 +90,14 @@ class Board:
             return True
         else:
             return False
+
+    def check_is_tie(self):
+        empty_count = 0
+        for row in self.game_board:
+            empty_count += row.count(Board.EMPTY_CELL)
+        return empty_count == 0
+
+    def rest_board(self):
+        self.game_board = [[0, 0, 0],
+                           [0, 0, 0],
+                           [0, 0, 0]]

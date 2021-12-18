@@ -132,3 +132,25 @@ class BoardTest(TestCase):
         my_board.game_board = [[0, 0, "O"], ["X", "O", 0], ["O", "X", 0]]
         move = Move(7)
         self.assertEqual(my_board.check_is_game_over(player, move), "Computer")
+
+    def test_check_is_tie(self):
+        my_board = Board()
+        my_board.game_board = [["X", "X", "O"],
+                               ["O", "X", "X"],
+                               ["X", "O", "O"]]
+        self.assertTrue(my_board.check_is_tie())
+
+    def test_check_is_not_tie(self):
+        my_board = Board()
+        my_board.game_board = [["X", "X", "O"],
+                               ["O", "X", "X"],
+                               ["X", 0, "O"]]
+        self.assertFalse(my_board.check_is_tie())
+
+    def test_reset_board_success(self):
+        my_board = Board()
+        my_board.game_board = [["X", "X", "O"],
+                               ["O", "X", "X"],
+                               ["X", "O", "O"]]
+        my_board.rest_board()
+        self.assertEqual(my_board.game_board, EMPTY_GAME_BOARD)
